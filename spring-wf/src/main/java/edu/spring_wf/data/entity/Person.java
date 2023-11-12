@@ -1,7 +1,5 @@
 package edu.spring_wf.data.entity;
 
-import org.hibernate.annotations.Generated;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +12,7 @@ import javax.persistence.Table;
 @Table(schema = "test", name = "person")
 public class Person {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "TestPersonSequence" )
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "TestPersonSequence" )
     @SequenceGenerator(
             schema = "test",
             name = "TestPersonSequence",
@@ -54,5 +52,14 @@ public class Person {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

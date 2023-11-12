@@ -25,11 +25,7 @@
         </dependency>
 
         <!--web-flux-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
-            <version>3.1.2</version>
-        </dependency>
+
 
         <!--db-->
         <dependency>
@@ -43,6 +39,7 @@
             <scope>runtime</scope>
             <version>2.1.214</version>
         </dependency>
+
 
     </dependencies>
 
