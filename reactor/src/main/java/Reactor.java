@@ -1,4 +1,5 @@
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
@@ -10,7 +11,6 @@ public class Reactor {
 
         Part01Flux part01Flux = new Part01Flux();
         part01Flux.counter().take(10).subscribe(System.out::println);
-
         Flux.interval(Duration.of(10L, ChronoUnit.MILLIS)).take(5).subscribe(System.out::println);
 
         Thread.sleep(1000);
