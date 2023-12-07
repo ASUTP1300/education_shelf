@@ -1,5 +1,5 @@
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
+import reactor.core.publisher.ParallelFlux;
 
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
@@ -9,11 +9,12 @@ public class Reactor {
     public static void main(String[] args) throws InterruptedException {
 
 
-        Part01Flux part01Flux = new Part01Flux();
-        part01Flux.counter().take(10).subscribe(System.out::println);
-        Flux.interval(Duration.of(10L, ChronoUnit.MILLIS)).take(5).subscribe(System.out::println);
+//        Part01Flux part01Flux = new Part01Flux();
+//        part01Flux.counter().take(10).subscribe(System.out::println);
+       ParallelFlux<Long> f = Flux.fromIterable(List.of(1L, 2L)).parallel();
 
-        Thread.sleep(1000);
+       f.map(n ->  n * 2).subscribe(System.out::println);
+       f.map(n ->  n * 3).subscribe(System.out::println);
 
     }
 

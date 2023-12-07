@@ -11,6 +11,7 @@ public class CompletableFutureTask {
 
     /**
      * Иммитируем ситуацию, клиент ждет ответа Сервера без блокировки потока
+     *
      * @param args
      * @throws ExecutionException
      * @throws InterruptedException
@@ -21,24 +22,24 @@ public class CompletableFutureTask {
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create("http://localhost:8888/persons/new")).GET().build();
 
         CompletableFuture<String> completableFuturePrint = CompletableFuture.supplyAsync(() ->
-        {
-            try {
-               HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-                System.out.println(response.body());
-                return response.body();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
+                {
+                    try {
+                        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+                        System.out.println(response.body());
+                        return response.body();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
 
         );
 
 
         completableFuturePrint
                 .thenApply(r -> (String) r)
-                .thenAccept( s -> System.out.println("Result of COMPLETABLE FUTURE\n"  + s));
+                .thenAccept(s -> System.out.println("Result of COMPLETABLE FUTURE\n" + s));
 
         Thread.sleep(1000);
 
