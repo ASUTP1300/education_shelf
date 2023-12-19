@@ -24,7 +24,16 @@
             <version>2.7.11</version>
         </dependency>
 
-        <!--web-flux-->
+        <!-- feign-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ru.bee.loadbs</groupId>
+            <artifactId>arc-load-bankstatement-s-client</artifactId>
+            <version>0.0.1</version>
+        </dependency>
 
 
         <!--db-->
@@ -39,7 +48,6 @@
             <scope>runtime</scope>
             <version>2.1.214</version>
         </dependency>
-
 
     </dependencies>
 

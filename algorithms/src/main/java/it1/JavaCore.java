@@ -6,8 +6,8 @@ public class JavaCore {
 
         System.out.println(test1());
         System.out.println(test2());
-    }
 
+    }
     //Test finally()
     static int test1() {
         try {

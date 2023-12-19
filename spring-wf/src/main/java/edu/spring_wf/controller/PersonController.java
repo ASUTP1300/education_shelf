@@ -13,11 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @RestController
 @RequestMapping("/persons")
 public class PersonController {
+
+    final AtomicInteger counter = new AtomicInteger(0);
     private final PersonRepository repository;
     private final PersonService service;
 
@@ -28,9 +32,19 @@ public class PersonController {
         this.service = service;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/mono/{id}")
     public Mono<Person> getPersonById(@PathVariable int id) {
-        return Mono.just(repository.findById(id).orElseThrow(() -> new RuntimeException("Такого человека нет!!")));
+        Mono<Person> person = Mono.just(repository.findById(id).orElseThrow(() -> new RuntimeException("Такого человека нет!!")));
+        System.out.println("Person " + person);
+        return person;
+    }
+
+    @GetMapping("/{id}")
+    public Person getPersonByIdType(@PathVariable int id) {
+        Person person = repository.findById(id).orElseThrow(() -> new RuntimeException("Такого человека нет!!"));
+        System.out.println("Person " + person);
+        System.out.println("Был вызван N : " + counter.addAndGet(1) + " раз. Время: " + LocalDateTime.now());
+        return person;
     }
 
     @GetMapping

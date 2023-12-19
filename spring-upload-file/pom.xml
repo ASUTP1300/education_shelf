@@ -30,6 +30,13 @@
             <artifactId>arc-load-bankstatement-s-client</artifactId>
             <version>0.0.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>edu</groupId>
+            <artifactId>spring-wf</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+
     </dependencies>
 
 

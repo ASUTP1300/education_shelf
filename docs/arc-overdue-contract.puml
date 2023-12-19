@@ -1,0 +1,13 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+participant OverdueContractProducer
+queue topic
+participant OverdueContractConsumer
+
+OverdueContractProducer -> topic
+topic -> OverdueContractConsumer
+
+@enduml

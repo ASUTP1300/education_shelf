@@ -1,0 +1,65 @@
+@startuml
+
+!definelong NEW_PAGE(obj)
+   == obj ==
+   autonumber
+!enddefinelong
+
+actor human
+participant LoadBankStatementService as Lbs
+database LoadBankStatement.DB#Red 
+queue LoadBankStatement.Topic#Yellow
+queue Spd_bill.Topic#LightBlue
+participant LoadBillService
+database LoadBillService.DB#Red
+
+participant LoadBankStatementHandleService
+database LoadBankStatementHandleService.DB#Red
+
+
+participant OverlayService
+participant AdvanceService
+
+
+NEW_PAGE(Загрузка банковских выписок)
+
+human -> Lbs: Загружаем банковские выписки
+Lbs -> LoadBankStatement.DB#Red : insert to bankstatement
+Lbs -> Lbs: Разбор выписок
+Lbs -> LoadBankStatement.DB : insert to payOrder
+LoadBankStatement.DB -> Lbs
+
+NEW_PAGE(Загрузка счетов клиентов)
+LoadBillService -> Spd_bill.Topic: Слушает топик
+Spd_bill.Topic -> LoadBillService: Получаем счета
+LoadBillService -> LoadBillService.DB: insert to bi_bill
+LoadBillService -> LoadBillService: чето делаем
+
+NEW_PAGE(Создание платежей и тразакций и движения по балансам)
+note over LoadBankStatementHandleService
+Объекты:
+    1) Payment - { копия PayOrder с привязкой к ProductId  } (вставка сущности)
+    Логика обработки:
+     а) Запрос на получения всех продуктов со СпидКоллектами (платежными индетификаторами);
+     б) Определение принадлежности PayOrder к Product по платежным индетификаторам;
+
+      Требуется загрузка сущности Product из Биллинга
+
+    2) FinTransaction -  { требуется привязка при поступлении платежа кредитуемой сущности (записывается платеж) } (вставка сущности)
+
+        Примечание 1: требуется привязка при поступлении счета к дебетуемой сущности (записывается счет)
+
+        Примечание 2: связка кредитуемой и дебетуемой сущности создается повторно при перекрытии
+      при этом в дебетуемую сущность записывается платеж в кредитуемую сущность записывается платеж
+
+    3) ChartOfAccount - {
+     Изменение средств со ссылкой на ProductId. После появления транзакции происходит вставка в coentity с типом:
+        а) При создании платежа: создается запись со ссылкой на платеж (coentity = copayment) [credit <> 0; debit == 0]
+        б) При создании счета: создается запись со ссылкой на счет (coentity  = cobill) [credit == 0; debit <> 0]
+        в) При создании перекрытия: создаются 2 записи
+            1. запись со ссылкой на платеж (coentity  = copayment) [credit == 0; debit <> 0]
+            2. запись со ссылкой на счет (coentity  = cobill) [credit <> 0; debit == 0]
+     } (вставка сущности)
+end note
+
+@enduml
