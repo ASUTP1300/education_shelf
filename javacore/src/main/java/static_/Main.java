@@ -5,16 +5,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.IntStream;
 
+/**
+ * Пример изменения объекта
+ */
 public class Main {
 
     final static AtomicInteger a = new AtomicInteger(1);
 
     public static void main(String[] args) {
         Date date = new Date(2023, 12, 5);
-
-
 
 
         Map<String, Integer> mapOut = new HashMap<>();
