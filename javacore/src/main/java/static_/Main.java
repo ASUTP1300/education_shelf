@@ -1,5 +1,6 @@
 package static_;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -14,21 +15,16 @@ public class Main {
     final static AtomicInteger a = new AtomicInteger(1);
 
     public static void main(String[] args) {
-        Date date = new Date(2023, 12, 5);
+        Dog dog = new Dog();
+        dog.name = "Байкал";
 
+        List<Dog> dogs = new ArrayList<>();
+        dogs.add(dog);
+        System.out.println("До : " + dogs);
 
-        Map<String, Integer> mapOut = new HashMap<>();
+        dog.name = "Гром";
 
-        Section section = new Section(mapOut);
-
-        //Кладу в Section's map
-        section.putInSectionMap("Тарлан", 38);
-
-        //Кладу в просто map
-        mapOut.put("Руслан", 32);
-
-        //Печатаю содержимое map в Section
-        System.out.println(section);
+        System.out.println("После : " + dogs);
     }
 
     static  class  Section {
@@ -48,14 +44,7 @@ public class Main {
                     "map=" + map +
                     '}';
         }
-    };
-
-
-
-
-
-
-
+    }
 
     static class TextSection extends Section{
 
@@ -72,5 +61,15 @@ public class Main {
         public ListSection(Map<String, Integer> map) {
             super(map);
         }
+    }
+}
+class Dog {
+    String name;
+
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }

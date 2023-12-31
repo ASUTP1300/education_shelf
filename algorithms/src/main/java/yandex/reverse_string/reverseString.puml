@@ -1,0 +1,56 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+: str : String;
+: result : List<String>;
+: index = 0;
+
+while (index < str.length )
+  while (index < str.length && str.chartAt(index) = SPACE)
+    : index++;
+  endwhile
+  if (index == str.length) then (true)
+    : return result;
+
+    stop
+  else (false)
+  endif
+  :result.add("");
+  while (index != str.length - 1 && str.chartAt(it) != SPACE)
+    : result[-1] += str[index] \n index++;
+  endwhile
+endwhile
+
+: return result;
+'if (Page.onSecurityCheck) then (true)
+'  :Page.onInit();
+'  if (isForward?) then (no)
+'    :Process controls;
+'    if (continue processing?) then (no)
+'      stop
+'    endif
+'
+'    if (isPost?) then (yes)
+'      :Page.onPost();
+'    else (no)
+'      :Page.onGet();
+'    endif
+'    :Page.onRender();
+'  endif
+'else (false)
+'endif
+'
+'if (do redirect?) then (yes)
+'  :redirect process;
+'else
+'  if (do forward?) then (yes)
+'    :Forward request;
+'  else (no)
+'    :Render page template;
+'  endif
+'endif
+
+'stop
+
+@enduml
