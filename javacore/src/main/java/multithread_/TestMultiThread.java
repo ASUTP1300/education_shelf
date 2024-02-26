@@ -17,7 +17,6 @@ public class TestMultiThread {
         a1.start();
         a2.start();
 
-
     }
 
 

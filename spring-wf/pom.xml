@@ -36,6 +36,13 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
         <!--db-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -48,6 +55,12 @@
             <scope>runtime</scope>
             <version>2.1.214</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+        </dependency>
+
 
     </dependencies>
 
