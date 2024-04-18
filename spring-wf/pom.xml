@@ -60,6 +60,17 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.bee.arcollection</groupId>
+            <artifactId>arc-spd-common-client</artifactId>
+            <version>0.0.1</version>
+        </dependency>
 
 
     </dependencies>

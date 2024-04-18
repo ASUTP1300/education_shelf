@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>test_app</artifactId>
+    <packaging>jar</packaging>
+    <version>0.0.1</version>
+
+    <parent>
+        <groupId>edu</groupId>
+        <artifactId>education-shelf</artifactId>
+        <version>0.0.1</version>
+    </parent>
+<!--    <parent>-->
+<!--        <groupId>ru.bee.arcollection</groupId>-->
+<!--        <artifactId>arc-backend-parent-l</artifactId>-->
+<!--        <version>0.0.1</version>-->
+<!--    </parent>-->
+
+
+    <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>org.junit.jupiter</groupId>-->
+<!--            <artifactId>junit-jupiter-api</artifactId>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; spring &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-web</artifactId>-->
+<!--            <version>2.7.11</version>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>edu</groupId>-->
+<!--            <artifactId>spring-wf</artifactId>-->
+<!--            <version>0.0.1</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>ru.bee.arcollection</groupId>
+            <artifactId>arc-spd-common-lib</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>edu</groupId>
+            <artifactId>spring-wf</artifactId>
+            <version>0.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>edu</groupId>
+            <artifactId>spring-wf</artifactId>
+            <version>0.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--        <dependency>-->
+<!--            <groupId>ru.bee.arcollection</groupId>-->
+<!--            <artifactId>arc-action-block-c-starter</artifactId>-->
+<!--            <version>0.0.1</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>ru.bee.arcollection</groupId>-->
+<!--            <artifactId>arc-contract-debt-strategy-s-starter</artifactId>-->
+<!--            <version>0.0.1</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>ru.bee.arcollection</groupId>-->
+<!--            <artifactId>arc-debt-info-s-starter</artifactId>-->
+<!--            <version>0.0.1</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>ru.bee.arcollection</groupId>-->
+<!--            <artifactId>arc-contract-debt-strategy-s</artifactId>-->
+<!--            <version>0.0.1</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>ru.bee.arcollection</groupId>-->
+<!--            <artifactId>arc-relative-contract-update-s-starter</artifactId>-->
+<!--            <version>0.0.1</version>-->
+<!--        </dependency>-->
+    </dependencies>
+
+    <properties>
+        <java.version>17</java.version>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
+    </properties>
+</project>

@@ -1,0 +1,46 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+'autonumber
+
+'HashMap <String, Delivery>
+'class Delivery {
+'    private int restourantId;
+'    private int fio;
+'}
+actor Семён
+
+participant "Микросервис Заказы" as mco #Yellow
+
+queue Кафка#LightBlue
+
+participant "Микросервис Доставки" as mcd #LightGreen
+
+participant "Микросервис Рестораны" as mcr #LightGreen
+
+Семён -> mco
+activate mco#Blue
+mco -> Кафка: Информация о заказе, топик **Заказ**
+
+Кафка -> mcd: Информация о заказе, топик **Заказ**
+activate mcd#Blue
+mcd -> mcd
+mcd -> Кафка: Данные о доставке заказа, топик **Доставка**
+
+deactivate mcd
+
+
+'autonumber 2
+Кафка -> mcr: Информация о заказе, топик **Заказ**
+activate mcr#Blue
+mcr -> mcr
+mcr -> Кафка: Информация о заказе топик **Ресторан**
+deactivate mcr
+
+Кафка -> mco: Информация о заказе топик **Ресторан**
+Кафка -> mco: Информация о заказе топик **Доставка**
+mco -> mco
+mco -> Семён
+deactivate mco
+
+@enduml

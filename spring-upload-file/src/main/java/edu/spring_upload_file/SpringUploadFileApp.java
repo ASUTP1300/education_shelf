@@ -1,6 +1,5 @@
 package edu.spring_upload_file;
 
-import edu.spring_upload_file.client.UploadClient;
 import edu.spring_wf.client.PersonClient;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

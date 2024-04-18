@@ -25,7 +25,6 @@ public class PersonServiceImpl implements PersonService {
         internalCreate(dto.name(), dto.age());
 
         System.out.println("Таблица Person");
-        System.out.println();
         TypedQuery<Person> query = entityManager.createQuery("select P from Person P", Person.class);
         query.getResultList().forEach(System.out::println);
         System.out.println("Конец");

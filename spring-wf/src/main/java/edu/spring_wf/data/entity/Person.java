@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(schema = "test", name = "person")
@@ -26,6 +27,9 @@ public class Person {
     private String name;
     @Column(name = "age")
     private int age;
+
+    @Column(name = "birthdate")
+    private LocalDateTime birthDate;
 
     public Person() {
     }
@@ -52,6 +56,10 @@ public class Person {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public void setBirthDate(LocalDateTime birthDate) {
+        this.birthDate = birthDate;
     }
 
     @Override

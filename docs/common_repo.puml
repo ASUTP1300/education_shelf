@@ -1,0 +1,50 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+
+
+
+
+
+
+component "Главный сервис" {
+
+
+
+  component bill_creater_starter {
+
+       component common(Entities&Repository)  as A  #LightGreen {
+                   cloud "DAO" as D1
+       }
+            cloud "Бизнес логика" as B2
+  }
+
+
+
+  component payment_creater_starter {
+
+       component common(Entities&Repository)  as B  #LightGreen {
+                   cloud "DAO" as D2
+       }
+            cloud "Бизнес логика" as B1
+
+  }
+      cloud "Главный сервис - cервис где main (поднятие контекста Spring)"
+
+}
+
+
+
+
+
+database DB#Yellow{
+}
+
+
+
+A --> DB
+B --> DB
+
+
+
+@enduml

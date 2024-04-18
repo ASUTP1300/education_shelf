@@ -1,9 +1,9 @@
 package it1;
 
-import java.util.Map;
 import java.util.Arrays;
-import java.util.stream.Collectors;
+import java.util.Map;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /*
  * IT1

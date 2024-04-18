@@ -4,10 +4,11 @@
 --Вставляем данные в Person с учетом Sequence
 CREATE SCHEMA IF NOT EXISTS test;
 
-CREATE TABLE test.person  (
+CREATE TABLE  IF NOT EXISTS test.person  (
     id int4 NOT NULL ,
     name varchar(256) NOT NULL,
     age int NOT NULL,
+    birthDate TIMESTAMP,
     CONSTRAINT person_pk PRIMARY KEY (id)
 );
 

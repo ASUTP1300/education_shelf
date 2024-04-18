@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+
+participant ActionService#Yellow
+database arcollection#LightGreen
+
+ActionService -> arcollection: SELECT * FROM action FOR UPDATE LOCKED LIMIT 50
+arcollection -> ActionService: BATCH
+ActionService -> ActionService:
+ActionService -> arcollection: UPDATE action SET action.status = 'DONE' WHERE action.id
+
+
+
+
+@enduml

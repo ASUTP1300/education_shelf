@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:Создали новый шаг стратегии;
+
+:POST: web/api/v0/collectionStep;
+:{"coCollectionStrategy":1412,
+     "coStrategyStage":60001,"planDays":12,
+     "name":"Автоматическая коммуникация",
+     "coCollectionStepType":
+     {"coCollectionStepType":2,
+     "name":"Автоматическая коммуникация"}};
+
+:createStep(dto, copyId);
+: copyStepParameters(copyFrom: Long, collectionStep: CollectionStepDto);
+: createCollectionStep(collectionStep: CollectionStepDto?, copyFrom: Long?): CollectionStepDto;
+
+if (copyForm) then
+    : copyStepParameters(copyFrom, collectionStep);
+    else
+    :fillDefaultParameters(collectionStep);
+    stop
+endif
+stop
+
+@enduml

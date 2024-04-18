@@ -11,6 +11,9 @@
       </bpmn:timerEventDefinition>
     </bpmn:startEvent>
     <bpmn:serviceTask id="Activity_1ryp1tv" camunda:delegateExpression="${printerDelegate}">
+      <bpmn:extensionElements>
+        <camunda:field name="text" stringValue="Hello World" />
+      </bpmn:extensionElements>
       <bpmn:incoming>Flow_02fzf00</bpmn:incoming>
       <bpmn:outgoing>Flow_1b31166</bpmn:outgoing>
     </bpmn:serviceTask>

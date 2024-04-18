@@ -1,0 +1,68 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+
+
+:Получение банковской выписки;
+switch(2)
+ case(1)
+:Прямой сценарий;
+
+partition Прямой сценарий #LightGreen {
+
+:Банковская выписка;
+:Определить банк и шаблон;
+
+if (Банк определен) then (да)
+  :Создать платежные поручения;
+ else (нет)
+    stop
+endif
+
+
+:Идем в таблицу PAYMENTIDENTIFIER;
+':Определить speedCollect;
+
+if (Найден л/с по speedCollect ?) then (Да)
+    else (Нет)
+        : Определить л/c по ИНН;
+    if (Определили л/c по ИНН) then (Да)
+    else (Нет)
+    stop
+    endif
+
+
+endif
+: Создать платеж;
+
+stop
+}
+ case(2)
+:Планировщик;
+
+partition Планировщик #Yellow  {
+
+:Каждый час система ищет П/П со статусами U N K;
+ if (Нашли П/П со статусом U N K)
+ else (нет)
+ stop
+ endif
+   :Идем в таблицу PAYMENTIDENTIFIER;
+:Определить speedCollect;
+
+if (Найден л/с по speedCollect ?) then (Да)
+    else (Нет)
+        : Определить л/c по ИНН;
+    if (Определили л/c по ИНН) then (Да)
+    else (Нет)
+    stop
+    endif
+
+
+endif
+: Создать платеж;
+
+stop
+}
+
+@enduml

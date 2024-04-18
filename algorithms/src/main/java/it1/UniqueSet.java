@@ -16,8 +16,8 @@ public class UniqueSet {
     public static void main(String[] args) {
         Set<Person> persons = new HashSet<>();
 
-        Person person1 = new Person("Руслан");
-        Person person2 = new Person("Руслан");
+        Person person1 = new Person("Иван");
+        Person person2 = new Person("Иван");
 
         persons.add(person1);
         persons.add(person2);
