@@ -6,7 +6,7 @@ import javax.persistence.Id
 import javax.persistence.Table
 
 @Entity
-@Table(schema = "arccamunda" , name = "job")
+@Table(schema = "arccamunda12" , name = "job")
 class Job(
     @Id
     @Column(name = "cojob")

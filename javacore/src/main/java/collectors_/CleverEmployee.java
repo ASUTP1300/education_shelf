@@ -9,7 +9,68 @@ import java.util.TreeSet;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-//26.02.24 beeline
+
+
+
+class Department {
+    String name;
+    List<Employee> employees;
+
+    public String getName() {
+        return name;
+    }
+
+    public Department setName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public List<collectors_.Employee> getEmployees() {
+        return employees;
+    }
+
+    public Department setEmployees(List<Employee> employees) {
+        this.employees = employees;
+        return this;
+    }
+
+
+}
+
+class Employee {
+    String fullName;
+    BigDecimal salary;
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public Employee setFullName(String fullName) {
+        this.fullName = fullName;
+        return this;
+    }
+
+    public BigDecimal getSalary() {
+        return salary;
+    }
+
+    public Employee setSalary(BigDecimal salary) {
+        this.salary = salary;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "fullName='" + fullName + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
+}
+
+
+
+
 public class CleverEmployee {
      static Department dep1 = new Department().setName("HR")
             .setEmployees(
@@ -69,4 +130,3 @@ public class CleverEmployee {
     }
 
 }
-

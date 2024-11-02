@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<process-application
-        xmlns="http://www.camunda.org/schema/1.0/ProcessApplication"
->
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<process-application-->
+<!--        xmlns="http://www.camunda.org/schema/1.0/ProcessApplication"-->
+<!--&gt;-->
 
-    <process-archive>
-        <properties>
-            <property name="reevaluateTimeCycleWhenDue">true</property>
-            <property name="isScanForProcessDefinitions">true</property>
-        </properties>
-    </process-archive>
+<!--    <process-archive>-->
+<!--        <properties>-->
+<!--            <property name="reevaluateTimeCycleWhenDue">true</property>-->
+<!--            <property name="isScanForProcessDefinitions">true</property>-->
+<!--        </properties>-->
+<!--    </process-archive>-->
 
-</process-application>
+<!--</process-application>-->

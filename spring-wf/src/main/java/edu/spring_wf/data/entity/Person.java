@@ -1,7 +1,9 @@
 package edu.spring_wf.data.entity;
 
+import org.hibernate.annotations.Entity;
+
 import javax.persistence.Column;
-import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -9,7 +11,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
 
-@Entity
+
 @Table(schema = "test", name = "person")
 public class Person {
     @Id

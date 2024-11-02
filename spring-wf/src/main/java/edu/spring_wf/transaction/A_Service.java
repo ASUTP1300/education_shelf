@@ -43,11 +43,6 @@ public class A_Service {
 
 
 
-//        Person person = new Person();
-//        person.setName("Женя");
-//        person.setAge(1);
-//        person.setBirthDate(LocalDateTime.now());
-//        personRepository.save(person);
 
         try {
 

@@ -6,6 +6,7 @@ import feign.Response;
 import feign.form.spring.SpringFormEncoder;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
+import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 

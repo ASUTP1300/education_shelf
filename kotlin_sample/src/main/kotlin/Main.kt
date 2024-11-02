@@ -1,38 +1,73 @@
+import java.math.BigDecimal
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.util.stream.IntStream
+import kotlin.streams.asSequence
+
 fun main() {
 
+    println(listOf("SPRING_DATASOURCE_URL").filter { s -> s.lowercase().contains("url") })
 
 
-  println(test(null))
-
-
-
-
-//    println(Sex.MALE.hashCode())
-//    println(Sex.MALE.hashCode())
+//    val list = mutableListOf(null, 1)
 //
-//    val person1 = Person("Иван", 20, Sex.MALE)
-//    val person2 = Person("Нина", 39, Sex.MALE)
-//    val person3 = Person("Коля", 39, Sex.MALE)
-//    val person4 = Person("Иван", 20, Sex.MALE)
+//    println(list.maxOf { it ?: 0 })
 //
-//    val persons = listOf(person1, person2, person3, person4)
+//    val autos = IntStream.range(0, 10).mapToObj { Auto(it) }.toList()
+
+
+//    try {
 //
-//    println(persons.groupBy { CompositeKey<Sex, Int>(it.sex, it.age) })
+//        autos.asSequence().onEach {
+//            if (it.num == 3 || it.num == 8) {
+//                throw RuntimeException("Дырка!!")
+//            }
+//        }.forEach { println("Успешная обработка $it") }
+//
+//    } catch (e: Exception) {
+//        println("Ошибка при обработке авто $e!!")
+//    }
 
 
-
-
+//
+//    autos.asSequence().onEach {
+//        try {
+//            if (it.num == 3 || it.num == 8) {
+//                throw RuntimeException("Дырка!!")
+//            }
+//        } catch (e: Exception) {
+//            println("Ошибка при обработке авто $it!!")
+//            throw RuntimeException("ОШибка")
+//        }
+//    }.forEach { println("Успешная обработка $it") }
 
 }
 
 
- fun test(n: Int?): Int {
+class Auto(var num: Int) {
+    override fun toString(): String {
+        return "Auto(num=$num)"
+    }
+}
 
-     n ?: return Int.MAX_VALUE.also { println("Ничего не пришло(((") }
+class Dog(var name: String? = null, val age: Int) {
+    override fun toString(): String {
+        return "Dog(name=$name, age=$age)"
+    }
+}
 
-     return n
+class Person2 {
+    var name: String = "ee"
+    var age: Int = 0
+}
 
- }
+fun test(n: Int?): Int {
+
+    n ?: return Int.MAX_VALUE.also { println("Ничего не пришло(((") }
+
+    return n
+
+}
 
 enum class Sex {
 

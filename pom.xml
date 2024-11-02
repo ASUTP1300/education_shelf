@@ -19,6 +19,7 @@
     <modules>
         <module>spring-wf</module>
         <module>spring-upload-file</module>
+        <module>mssql-e</module>
     </modules>
     <dependencies>
         <dependency>
@@ -26,10 +27,14 @@
             <artifactId>spring-boot-starter-webflux</artifactId>
             <version>3.1.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.18.34</version>
+            <scope>provided</scope>
         </dependency>
+
     </dependencies>
 
 

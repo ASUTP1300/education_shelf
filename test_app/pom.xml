@@ -5,14 +5,21 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>test_app</artifactId>
+    <groupId>test</groupId>
     <packaging>jar</packaging>
     <version>0.0.1</version>
 
     <parent>
-        <groupId>edu</groupId>
-        <artifactId>education-shelf</artifactId>
-        <version>0.0.1</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.11</version>
+        <relativePath/>
     </parent>
+<!--    <parent>-->
+<!--        <groupId>edu</groupId>-->
+<!--        <artifactId>education-shelf</artifactId>-->
+<!--        <version>0.0.1</version>-->
+<!--    </parent>-->
 <!--    <parent>-->
 <!--        <groupId>ru.bee.arcollection</groupId>-->
 <!--        <artifactId>arc-backend-parent-l</artifactId>-->
@@ -21,7 +28,31 @@
 
 
     <dependencies>
-<!--        <dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>3.3.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.13</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.26</version>
+        </dependency>
+
+
+        <!--        <dependency>-->
 <!--            <groupId>org.junit.jupiter</groupId>-->
 <!--            <artifactId>junit-jupiter-api</artifactId>-->
 <!--        </dependency>-->
@@ -38,23 +69,23 @@
 <!--            <artifactId>spring-wf</artifactId>-->
 <!--            <version>0.0.1</version>-->
 <!--        </dependency>-->
-        <dependency>
-            <groupId>ru.bee.arcollection</groupId>
-            <artifactId>arc-spd-common-lib</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>edu</groupId>
-            <artifactId>spring-wf</artifactId>
-            <version>0.0.1</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>edu</groupId>
-            <artifactId>spring-wf</artifactId>
-            <version>0.0.1</version>
-            <scope>compile</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>ru.bee.arcollection</groupId>-->
+<!--            <artifactId>arc-spd-common-lib</artifactId>-->
+<!--            <version>0.0.1</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>edu</groupId>-->
+<!--            <artifactId>spring-wf</artifactId>-->
+<!--            <version>0.0.1</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>edu</groupId>-->
+<!--            <artifactId>spring-wf</artifactId>-->
+<!--            <version>0.0.1</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
         <!--        <dependency>-->
 <!--            <groupId>ru.bee.arcollection</groupId>-->
 <!--            <artifactId>arc-action-block-c-starter</artifactId>-->
